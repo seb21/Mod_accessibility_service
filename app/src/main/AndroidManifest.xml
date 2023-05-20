@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+
+    <application
+        android:appCategory="accessibility"
+        android:label="Ms mod accessibility service">
+    <service
+        android:name=".Accessibility"
+        android:exported="true"
+        android:label="Ms mod accessibility service"
+        android:enabled="true"
+        android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+
+        <intent-filter>
+            <action android:name="android.accessibilityservice.AccessibilityService" />
+        </intent-filter>
+        <meta-data
+            android:name="android.accessibilityservice"
+            android:resource="@xml/servicesettings" />
+    </service>
+    </application>
+
+</manifest>
